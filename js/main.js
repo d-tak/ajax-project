@@ -14,7 +14,7 @@ function getData() {
     $quote.appendChild($text);
     $quote.appendChild($author);
     text = xhr.response.quote;
-    dood = xhr.response.author;
+    authorName = xhr.response.author;
   }
   );
   xhr.send();
@@ -23,14 +23,14 @@ getData();
 
 var likedThought = document.querySelector('#form-input');
 var text;
-var dood;
+var authorName;
 
 function handleClick(event) {
   event.preventDefault();
 
   var savedQuote = {
     quote: text,
-    author: dood
+    author: authorName
   };
 
   data.nextEntryId++;
