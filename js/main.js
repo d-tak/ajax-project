@@ -1,4 +1,5 @@
 var $quote = document.querySelector('#quote');
+var ul = document.querySelector('ul');
 
 function getData() {
   var xhr = new XMLHttpRequest();
@@ -12,8 +13,31 @@ function getData() {
     $author.textContent = xhr.response.author;
     $quote.appendChild($text);
     $quote.appendChild($author);
+    text = xhr.response.quote;
+    authorName = xhr.response.author;
   }
   );
   xhr.send();
 }
 getData();
+
+var likedThought = document.querySelector('#form-input');
+var text;
+var authorName;
+
+function handleClick(event) {
+  event.preventDefault();
+
+  var savedQuote = {
+    quote: text,
+    author: authorName
+  };
+
+  data.nextEntryId++;
+  likedThought.reset();
+  data.entries.unshift(likedThought);
+  ul.prepend(savedQuote);
+
+}
+
+likedThought.addEventListener('click', handleClick);
