@@ -1,5 +1,4 @@
 var $quote = document.querySelector('.quote');
-var ul = document.querySelector('ul');
 var $button = document.querySelector('.button');
 
 function getData() {
@@ -36,7 +35,7 @@ function handleLike(event) {
 
   data.nextEntryId++;
   // likedThought.reset();
-  data.entries.unshift(savedQuote);
+  data.quotations.unshift(savedQuote);
   renderLiked(savedQuote);
   viewSwap(savedQuote);
 }
@@ -46,20 +45,17 @@ if ($button != null) {
 }
 
 function renderLiked(entry) {
-  var card = document.createElement('li');
+  var card = document.createElement('p');
   // card.className('card');
   card.setAttribute('class', 'card');
 
-  var text = document.createElement('li');
+  var text = document.createElement('p');
   text.textContent = entry.text;
 
-  var person = document.createElement('li');
+  var person = document.createElement('p');
   person.textContent = entry.person;
 
-  ul.appendChild(card);
-  ul.appendChild(text);
-  ul.appendChild(person);
-
+  return card;
 }
 
 var navLiked = document.querySelector('.nav-liked-thoughts');
@@ -67,7 +63,7 @@ navLiked.addEventListener('click', viewSwap);
 
 function viewSwap(savedQuote) {
   var parent = document.querySelector('.content');
-  parent.innerHTML = '';
+  parent.replaceChildren();
 
   var entries;
   if ('quote' in savedQuote) {

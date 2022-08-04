@@ -1,7 +1,7 @@
 /* exported data */
 var data = {
   view: 'savedQuote',
-  entries: [],
+  quotations: [],
   editing: null,
   nextEntryId: 1
 };
@@ -17,9 +17,3 @@ function likedThought(event) {
   var stringifyQuoteJSON = JSON.stringify(data);
   localStorage.setItem('ajax-local-storage', stringifyQuoteJSON);
 }
-
-// window.addEventListener('beforeunload', saveJournal);
-// function saveJournal(event) {
-//   var stringifyJournalJSON = JSON.stringify(data);
-//   localStorage.setItem('ajax-local-storage', stringifyJournalJSON);
-// }
