@@ -9,30 +9,51 @@ body {
   color: white;
 }
 
+.logo {
+  display: inline-block;
+  padding: 1.5rem 0;
+}
+
 h1 {
   font-family: Lato, sans-serif;
   font-weight: 300;
   font-size: 18px;
 }
 
+a:link {
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  color: white;
+  text-decoration: none;
+  padding-top: 15rem;
+}
+
+a:visited {
+  color: white;
+}
+
 h2 {
   font-family: Poppins, sans-serif;
   font-weight: 400;
   font-size: 24px;
+  margin-bottom: 2px;
 }
 
-.column-half > img {
+/* .column-half > img {
   width: 100%;
-}
+} */
 
 .center {
   text-align: center;
 }
 
+/*
 .column-half input {
   width: 100%;
   line-height: 25px;
-}
+} */
 
 label {
   line-height: 25px;
@@ -42,9 +63,11 @@ label {
   border-radius: 0.1rem;
   background-color: rgba(240, 186, 51, 0.12);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
-ul {
+.quote {
   list-style: none;
   font-family: "nanum pen script", sans-serif;
   font-size: 26px;
@@ -53,7 +76,7 @@ ul {
   text-align: center;
 }
 
-li {
+p {
   margin-bottom: 1.25rem;
 }
 
@@ -68,4 +91,29 @@ li {
   font-weight: 400;
   font-size: 14px;
   margin-bottom: 1.25rem;
+}
+
+.nav-liked-thoughts {
+  border-color: #007bff;
+  background-color: #e9e7e9;
+  color: #2b5881;
+  width: 120px;
+  height: 27px;
+  border-radius: 4px;
+  border-width: 1.25px;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+i {
+  font-size: 1.5rem;
+  color: #2b5881;
 }
