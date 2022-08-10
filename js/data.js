@@ -3,7 +3,8 @@ var data = {
   view: 'savedQuote',
   quotations: [],
   editing: null,
-  nextEntryId: 1
+  nextQuotationId: 1,
+  currentQuote: null
 };
 
 var previousEntryJSON = localStorage.getItem('ajax-local-storage');

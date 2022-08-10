@@ -9,7 +9,7 @@ body {
   color: white;
 }
 
-.tabs {
+.logo {
   display: inline-block;
   padding: 1.5rem 0;
 }
@@ -41,18 +41,19 @@ h2 {
   margin-bottom: 2px;
 }
 
-.column-half > img {
+/* .column-half > img {
   width: 100%;
-}
+} */
 
 .center {
   text-align: center;
 }
 
+/*
 .column-half input {
   width: 100%;
   line-height: 25px;
-}
+} */
 
 label {
   line-height: 25px;
@@ -66,7 +67,7 @@ label {
   margin-bottom: 1.5rem;
 }
 
-ul {
+.quote {
   list-style: none;
   font-family: "nanum pen script", sans-serif;
   font-size: 26px;
@@ -75,7 +76,7 @@ ul {
   text-align: center;
 }
 
-li {
+p {
   margin-bottom: 1.25rem;
 }
 
@@ -103,8 +104,16 @@ li {
   font-family: Poppins, sans-serif;
   font-weight: 400;
   font-size: 12px;
+  margin-bottom: 1.5rem;
 }
 
-.content {
-  text-align: center;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+i {
+  font-size: 1.5rem;
+  color: #2b5881;
 }
