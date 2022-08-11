@@ -41,7 +41,6 @@ function handleSubmit(event) {
   var completedEntry = {
     quote: data.currentQuote.quote,
     author: data.currentQuote.author,
-    quotationId: data.nextQuotationId,
     notes: journalEntry.elements.notes.value,
     journalId: data.nextJournalId
   };
@@ -144,7 +143,6 @@ function journal(viewJournal) {
   var parent = document.querySelector('.entries-container');
   var dailyQuote = document.querySelector('#daily-quote');
   var formInput = document.querySelector('#form-input');
-  // var notes = document.querySelector('#notes');
   dailyQuote.classList.add('hidden');
   formInput.classList.add('hidden');
   parent.replaceChildren();
