@@ -28,7 +28,7 @@
     <div class="container">
       <div class="row">
         <div class="column-full">
-          <nav class="logo"><a href="#" data-link="entries"> Thinking Thoughts </a></nav>
+          <nav class="logo"><a href="/index.html" data-link="entries"> Thinking Thoughts </a></nav>
           <!-- <h1 class="tabs"> Thinking Thoughts </h1> -->
         </div>
       </div>
@@ -46,6 +46,8 @@
           <div class="column-full">
             <label for="liked"></label>
             <button class="nav-liked-thoughts" type="submit">Liked Thoughts</button>
+            <label for="journal"></label>
+            <button class="nav-journal" type="submit">Journal</button>
 
           </div>
         </div>
@@ -68,7 +70,7 @@
 
           <div class="column-half center">
             <form id="form-input" class="entry view">
-              <div class="notes">
+              <div class="thoughts">
                 <label for="notes"> - Thoughts - </label>
                 <textarea name="notes" id="notes" class="column-full notes-field"></textarea>
                 <button class="button" type="submit">THINK</button>
@@ -82,6 +84,12 @@
         <ul class="row quote-container">
 
         </ul>
+      </div>
+
+      <div data-view="entries" class="view">
+        <div class="entries-container">
+
+        </div>
       </div>
     </div>
   </main>
