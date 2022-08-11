@@ -15,6 +15,7 @@ if (previousEntryJSON !== null) {
 }
 
 window.addEventListener('beforeunload', likedThought);
+window.addEventListener('pagehide', likedThought);
 
 function likedThought(event) {
   var stringifyQuoteJSON = JSON.stringify(data);
