@@ -45,12 +45,10 @@ function handleSubmit(event) {
     journalId: data.nextJournalId
   };
 
+  data.nextQuotationId++;
   data.nextJournalId++;
-  journalEntry.reset();
   data.entries.unshift(completedEntry);
 }
-
-journalEntry.addEventListener('submit', handleSubmit);
 
 function renderQuote(entry) {
   var columnHalf = document.createElement('li');
@@ -88,5 +86,68 @@ function likedCards(viewLiked) {
   for (var i = 0; i < data.quotations.length; i++) {
     var likedThought = renderQuote(data.quotations[i]);
     parent.append(likedThought);
+  }
+}
+
+journalEntry.addEventListener('submit', handleSubmit);
+
+var navJournal = document.querySelector('.nav-journal');
+navJournal.addEventListener('click', journal);
+
+function renderJournal(entry) {
+  var columnFull = document.createElement('div');
+  columnFull.setAttribute('class', 'column-full');
+
+  var row = document.createElement('div');
+  row.setAttribute('class', 'row');
+  columnFull.append(row);
+
+  var columnHalf = document.createElement('div');
+  columnHalf.setAttribute('class', 'column-half');
+  row.append(columnHalf);
+
+  var card = document.createElement('div');
+  card.setAttribute('class', 'card');
+  columnHalf.append(card);
+
+  var quoteList = document.createElement('div');
+  quoteList.setAttribute('class', 'quote');
+  card.append(quoteList);
+
+  var quote = document.createElement('p');
+  quoteList.append(quote);
+  quote.textContent = entry.quote;
+
+  var author = document.createElement('p');
+  quoteList.append(author);
+  author.textContent = entry.author;
+
+  var columnHalf2 = document.createElement('div');
+  columnHalf2.setAttribute('class', 'column-half');
+  row.append(columnHalf2);
+
+  var journalHeader = document.createElement('h4');
+  journalHeader.setAttribute('class', 'h4');
+  columnHalf2.append(journalHeader);
+  journalHeader.textContent = '- Thoughts -';
+
+  var notes = document.createElement('li');
+  notes.setAttribute('class', 'notes');
+  journalHeader.append(notes);
+  notes.textContent = entry.notes;
+
+  return columnFull;
+}
+
+function journal(viewJournal) {
+  var parent = document.querySelector('.entries-container');
+  var dailyQuote = document.querySelector('#daily-quote');
+  var formInput = document.querySelector('#form-input');
+  dailyQuote.classList.add('hidden');
+  formInput.classList.add('hidden');
+  parent.replaceChildren();
+  for (var i = 0; i < data.quotations.length; i++) {
+    var journal = renderJournal(data.entries[i]);
+    parent.append(journal);
   }
 }

@@ -20,8 +20,3 @@ function likedThought(event) {
   var stringifyQuoteJSON = JSON.stringify(data);
   localStorage.setItem('ajax-local-storage', stringifyQuoteJSON);
 }
-
-// function saveJournal(event) {
-//   var stringifyJournalJSON = JSON.stringify(data);
-//   localStorage.setItem('ajax-local-storage', stringifyJournalJSON);
-// }
