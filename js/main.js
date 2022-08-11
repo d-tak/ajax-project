@@ -19,7 +19,7 @@ function renderDailyQuote() {
 renderDailyQuote();
 
 $like.addEventListener('click', handleLike);
-$button.addEventListener('click', handleSubmit);
+$button.addEventListener('submit', handleSubmit);
 
 function handleLike(event) {
   event.preventDefault();
