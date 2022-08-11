@@ -1,7 +1,7 @@
 var $like = document.querySelector('i');
 var quoteText = document.querySelector('.quote-text');
 var quoteAuthor = document.querySelector('.quote-author');
-var $button = document.querySelector('.button');
+var $form = document.querySelector('#form-input');
 
 function renderDailyQuote() {
   var xhr = new XMLHttpRequest();
@@ -19,7 +19,7 @@ function renderDailyQuote() {
 renderDailyQuote();
 
 $like.addEventListener('click', handleLike);
-$button.addEventListener('submit', handleSubmit);
+$form.addEventListener('submit', handleSubmit);
 
 function handleLike(event) {
   event.preventDefault();
@@ -34,14 +34,13 @@ function handleLike(event) {
   data.quotations.unshift(savedQuote);
 }
 
-var journalEntry = document.querySelector('#form-input');
 function handleSubmit(event) {
   event.preventDefault();
 
   var completedEntry = {
     quote: data.currentQuote.quote,
     author: data.currentQuote.author,
-    notes: journalEntry.elements.notes.value,
+    notes: $form.elements.notes.value,
     journalId: data.nextJournalId
   };
 
@@ -88,8 +87,6 @@ function likedCards(viewLiked) {
     parent.append(likedThought);
   }
 }
-
-journalEntry.addEventListener('submit', handleSubmit);
 
 var navJournal = document.querySelector('.nav-journal');
 navJournal.addEventListener('click', journal);
