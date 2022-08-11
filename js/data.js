@@ -4,7 +4,9 @@ var data = {
   quotations: [],
   editing: null,
   nextQuotationId: 1,
-  currentQuote: null
+  currentQuote: null,
+  entries: [],
+  nextJournalId: 1
 };
 
 var previousEntryJSON = localStorage.getItem('ajax-local-storage');
@@ -18,3 +20,8 @@ function likedThought(event) {
   var stringifyQuoteJSON = JSON.stringify(data);
   localStorage.setItem('ajax-local-storage', stringifyQuoteJSON);
 }
+
+// function saveJournal(event) {
+//   var stringifyJournalJSON = JSON.stringify(data);
+//   localStorage.setItem('ajax-local-storage', stringifyJournalJSON);
+// }
