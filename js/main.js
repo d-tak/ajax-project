@@ -39,6 +39,8 @@ function handleSubmit(event) {
   event.preventDefault();
 
   var completedEntry = {
+    quote: data.currentQuote.quote,
+    author: data.currentQuote.author,
     notes: journalEntry.elements.notes.value,
     journalId: data.nextJournalId
   };
