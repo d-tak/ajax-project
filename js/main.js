@@ -2,6 +2,7 @@ var $like = document.querySelector('i');
 var quoteText = document.querySelector('.quote-text');
 var quoteAuthor = document.querySelector('.quote-author');
 var $form = document.querySelector('#form-input');
+var yomama = document.querySelector('.yomama');
 
 function renderDailyQuote() {
   var xhr = new XMLHttpRequest();
@@ -14,6 +15,7 @@ function renderDailyQuote() {
   }
   );
   xhr.send();
+  yomama.classList.add('hidden');
 }
 
 renderDailyQuote();
@@ -86,6 +88,9 @@ function likedCards(viewLiked) {
     var likedThought = renderQuote(data.quotations[i]);
     parent.append(likedThought);
   }
+  if (data.quotations.length === 0) {
+    yomama.className = 'yomama view';
+  }
 }
 
 var navJournal = document.querySelector('.nav-journal');
@@ -146,5 +151,8 @@ function journal(viewJournal) {
   for (var i = 0; i < data.quotations.length; i++) {
     var journal = renderJournal(data.entries[i]);
     parent.append(journal);
+  }
+  if (data.quotations.length === 0) {
+    yomama.className = 'yomama view';
   }
 }
