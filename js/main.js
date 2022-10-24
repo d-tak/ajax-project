@@ -49,6 +49,7 @@ function handleSubmit(event) {
   data.nextQuotationId++;
   data.nextJournalId++;
   data.entries.unshift(completedEntry);
+  journal();
 }
 
 function renderQuote(entry) {
